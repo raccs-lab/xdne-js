@@ -1,0 +1,43 @@
+{
+  "name": "xdne",
+  "version": "1.0.0",
+  "description": "An npm module for retrieving generated images of persons, places, or things that do not exist",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.gatech.edu/spud/xdne-js.git"
+  },
+  "keywords": [
+    "this-x-does-not-exist",
+    "api",
+    "images"
+  ],
+  "author": "Jacob Logas",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.0.20",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true
+  }
+}

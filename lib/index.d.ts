@@ -1,4 +1,3 @@
-import 'bent';
 export declare enum PhotoType {
   Random = -1,
   Person = 0,

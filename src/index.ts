@@ -1,4 +1,3 @@
-import 'bent';
 import bent = require('bent');
 
 export enum PhotoType {

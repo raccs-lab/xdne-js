@@ -5,6 +5,12 @@
       "declaration": true,
       "outDir": "./lib",
       "strict": true
-    }
+    },
+    "include": [
+      "./src/*"
+    ],
+    "exclude": [
+      "./tests/**/*.spec.ts"
+    ]
 }
   

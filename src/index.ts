@@ -1,8 +1,7 @@
-module.exports = {
-  getImage,
-};
+import 'bent';
+import bent = require('bent');
 
-enum PhotoType {
+export enum PhotoType {
   Random = -1,
   Person = 0,
   Cat = 1,
@@ -11,7 +10,9 @@ enum PhotoType {
   Room = 4,
 }
 
-async function getImage(type: PhotoType = PhotoType.Random): Promise<Response> {
+export async function getImage(
+  type: PhotoType = PhotoType.Random
+): Promise<ArrayBufferLike> {
   //give a list of usable image urls
   var urls = [
     'https://thispersondoesnotexist.com/image', //#0: people
@@ -29,6 +30,7 @@ async function getImage(type: PhotoType = PhotoType.Random): Promise<Response> {
     im_url = urls[type];
   }
 
-  let response = await fetch(im_url);
-  return response;
+  const stream = bent('buffer');
+  const buffer = await stream(im_url);
+  return buffer;
 }

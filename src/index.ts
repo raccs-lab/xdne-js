@@ -1,4 +1,5 @@
 import bent = require('bent');
+import imageminMozjpeg = require('imagemin-mozjpeg');
 
 export enum PhotoType {
   Random = -1,
@@ -11,7 +12,7 @@ export enum PhotoType {
 
 export async function getImage(
   type: PhotoType = PhotoType.Random
-): Promise<ArrayBufferLike> {
+): Promise<Buffer> {
   //give a list of usable image urls
   var urls = [
     'https://thispersondoesnotexist.com/image', //#0: people
@@ -30,6 +31,11 @@ export async function getImage(
   }
 
   const stream = bent('buffer');
-  const buffer = await stream(im_url);
+  const from_buffer = await stream(im_url);
+  const buffer = await imageminMozjpeg({
+    quality: 82,
+    progressive: true,
+    sample: ['2x2', '1x1', '1x1'],
+  })(Buffer.from(from_buffer));
   return buffer;
 }

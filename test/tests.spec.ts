@@ -2,6 +2,7 @@ import { getImage, PhotoType } from '../src';
 import { expect } from 'chai';
 const FileType = require('file-type');
 import 'mocha';
+import { writeFileSync, write } from 'fs';
 
 describe('Get image function Art type', () => {
   it('should return jpeg', async () => {
@@ -54,5 +55,11 @@ describe('Get image function Room type', () => {
     expect(result).to.be.an.instanceOf(Buffer);
     const type = await FileType.fromBuffer(result);
     expect(type.mime).to.equal('image/jpeg');
+  });
+
+  it('should save to disk', async () => {
+    const result = await getImage(PhotoType.Room);
+    expect(result).to.be.an.instanceOf(Buffer);
+    writeFileSync('test/output_jpg/output.jpg', result);
   });
 });

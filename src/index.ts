@@ -1,5 +1,5 @@
 import bent = require('bent');
-import imageminMozjpeg = require('imagemin-mozjpeg');
+const mozjpeg = require('mozjpeg-js');
 
 export enum PhotoType {
   Random = -1,
@@ -32,10 +32,10 @@ export async function getImage(
 
   const stream = bent('buffer');
   const from_buffer = await stream(im_url);
-  const buffer = await imageminMozjpeg({
+  const buffer = mozjpeg.encode(Buffer.from(from_buffer), {
     quality: 82,
     progressive: true,
     sample: ['2x2', '1x1', '1x1'],
-  })(Buffer.from(from_buffer));
-  return buffer;
+  });
+  return Buffer.from(buffer.data);
 }

@@ -1,3 +1,4 @@
+/// <reference types="node" />
 export declare enum PhotoType {
   Random = -1,
   Person = 0,
@@ -6,4 +7,4 @@ export declare enum PhotoType {
   Art = 3,
   Room = 4,
 }
-export declare function getImage(type?: PhotoType): Promise<ArrayBufferLike>;
+export declare function getImage(type?: PhotoType): Promise<Buffer>;

@@ -14,11 +14,11 @@ export async function getImage(
 ): Promise<Buffer> {
   //give a list of usable image urls
   var urls = [
-    'https://thispersondoesnotexist.com/image', //#0: people
-    'https://thiscatdoesnotexist.com/', //#1: cat
-    'https://thishorsedoesnotexist.com/', //#2: horse
-    'https://thisartworkdoesnotexist.com/', //#3: art
-    'https://thisrentaldoesnotexist.com/img-new/hero.jpg', //#4: room
+    'https://thisrentaldoesnotexist.com/img-new/hero.jpg', //#0: room 512x512
+    'https://thisrentaldoesnotexist.com/img-new/img1.jpg', //#1: room 256x256
+    'https://thisrentaldoesnotexist.com/img-new/img2.jpg', //#2: room 256x256
+    'https://thisrentaldoesnotexist.com/img-new/img3.jpg', //#3: room 256x256
+    'https://thisrentaldoesnotexist.com/img-new/img4.jpg', //#4: room 256x256
   ];
   //set image url
   let im_url: string;

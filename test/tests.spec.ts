@@ -10,7 +10,7 @@ describe('Get image function Art type', () => {
     expect(result).to.be.an.instanceOf(Buffer);
     const type = await FileType.fromBuffer(result);
     expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output_jpg/art.jfif', result);
+    writeFileSync('test/output_jpg/art.jpeg', result);
   });
 });
 
@@ -20,7 +20,7 @@ describe('Get image function Cat type', () => {
     expect(result).to.be.an.instanceOf(Buffer);
     const type = await FileType.fromBuffer(result);
     expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output_jpg/cat.jfif', result);
+    writeFileSync('test/output_jpg/cat.jpeg', result);
   });
 });
 
@@ -30,7 +30,7 @@ describe('Get image function Horse type', () => {
     expect(result).to.be.an.instanceOf(Buffer);
     const type = await FileType.fromBuffer(result);
     expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output_jpg/horse.jfif', result);
+    writeFileSync('test/output_jpg/horse.jpeg', result);
   });
 });
 
@@ -40,7 +40,7 @@ describe('Get image function Person type', () => {
     expect(result).to.be.an.instanceOf(Buffer);
     const type = await FileType.fromBuffer(result);
     expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output_jpg/person.jfif', result);
+    writeFileSync('test/output_jpg/person.jpeg', result);
   });
 });
 
@@ -50,7 +50,7 @@ describe('Get image function Random type', () => {
     expect(result).to.be.an.instanceOf(Buffer);
     const type = await FileType.fromBuffer(result);
     expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output_jpg/random.jfif', result);
+    writeFileSync('test/output_jpg/random.jpeg', result);
   });
 });
 
@@ -60,6 +60,6 @@ describe('Get image function Room type', () => {
     expect(result).to.be.an.instanceOf(Buffer);
     const type = await FileType.fromBuffer(result);
     expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output_jpg/room.jfif', result);
+    writeFileSync('test/output_jpg/room.jpeg', result);
   });
 });

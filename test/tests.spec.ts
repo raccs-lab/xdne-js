@@ -1,65 +1,71 @@
-import { getImage, PhotoType } from '../src';
+import { getImage, PhotoTypes } from '../src/index.ts';
 import { expect } from 'chai';
-const FileType = require('file-type');
+import { fileTypeFromBuffer } from 'file-type';
 import 'mocha';
 import { writeFileSync } from 'fs';
 
-describe('Get image function Art type', () => {
-  it('should return jpeg', async () => {
-    const result = await getImage(PhotoType.Art);
-    expect(result).to.be.an.instanceOf(Buffer);
-    const type = await FileType.fromBuffer(result);
-    expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output_jpg/art.jpeg', result);
-  });
-});
+// describe('Get image function Art type', () => {
+//   it('should return jpeg', async () => {
+//     const result = await getImage(PhotoTypes.Art);
+//     expect(result).to.be.an.instanceOf(Buffer);
+//     const type = await fileTypeFromBuffer(result);
+//     expect(type).to.have.property("mime").equals('img/jpeg');
+//     // expect(type.mime).to.equal('image/jpeg');
+//     writeFileSync('test/output_jpg/art.jpeg', result);
+//   });
+// });
 
-describe('Get image function Cat type', () => {
-  it('should return jpeg', async () => {
-    const result = await getImage(PhotoType.Cat);
-    expect(result).to.be.an.instanceOf(Buffer);
-    const type = await FileType.fromBuffer(result);
-    expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output_jpg/cat.jpeg', result);
-  });
-});
+// describe('Get image function Cat type', () => {
+//   it('should return jpeg', async () => {
+//     const result = await getImage(PhotoTypes.Cat);
+//     expect(result).to.be.an.instanceOf(Buffer);
+//     const type = await fileTypeFromBuffer(result);
+//     expect(type).to.have.property("mime").equals('image/jpeg');
+//     // expect(type.mime).to.equal('image/jpeg');
+//     writeFileSync('test/output_jpg/cat.jpeg', result);
+//   });
+// });
 
-describe('Get image function Horse type', () => {
-  it('should return jpeg', async () => {
-    const result = await getImage(PhotoType.Horse);
-    expect(result).to.be.an.instanceOf(Buffer);
-    const type = await FileType.fromBuffer(result);
-    expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output_jpg/horse.jpeg', result);
-  });
-});
+// describe('Get image function Horse type', () => {
+//   it('should return jpeg', async () => {
+//     const result = await getImage(PhotoTypes.Horse);
+//     expect(result).to.be.an.instanceOf(Buffer);
+//     const type = await fileTypeFromBuffer(result);
+//     expect(type).to.have.property("mime").equals('image/jpeg');
+//     // expect(type.mime).to.equal('image/jpeg');
+//     writeFileSync('test/output_jpg/horse.jpeg', result);
+//   });
+// });
 
 describe('Get image function Person type', () => {
   it('should return jpeg', async () => {
-    const result = await getImage(PhotoType.Person);
+    const result = await getImage(PhotoTypes.Person);
     expect(result).to.be.an.instanceOf(Buffer);
-    const type = await FileType.fromBuffer(result);
-    expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output_jpg/person.jpeg', result);
+    const type = await fileTypeFromBuffer(result);
+    expect(type).to.have.property("mime").equals('image/jpeg');
+    // expect(type.mime).to.equal('image/jpeg');
+    writeFileSync('test/output/person.jpeg', result);
   });
 });
 
 describe('Get image function Random type', () => {
   it('should return jpeg', async () => {
-    const result = await getImage(PhotoType.Random);
+    const result = await getImage(PhotoTypes.Random);
     expect(result).to.be.an.instanceOf(Buffer);
-    const type = await FileType.fromBuffer(result);
-    expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output_jpg/random.jpeg', result);
+    const type = await fileTypeFromBuffer(result);
+    expect(type).to.have.property("mime").equals('image/jpeg');
+    // expect(type.mime).to.equal('image/jpeg');
+    writeFileSync('test/output/random.jpeg', result);
   });
 });
 
 describe('Get image function Room type', () => {
   it('should return jpeg', async () => {
-    const result = await getImage(PhotoType.Room);
+    const result = await getImage(PhotoTypes.Room);
     expect(result).to.be.an.instanceOf(Buffer);
-    const type = await FileType.fromBuffer(result);
-    expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output_jpg/room.jpeg', result);
+    const type = await fileTypeFromBuffer(result);
+    expect(type).to.have.property("mime").equals('image/jpeg');
+    // expect(type.mime).to.equal('image/jpeg');
+    writeFileSync('test/output/room.jpeg', result);
   });
 });

@@ -115,4 +115,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-test/output_jpg
+test/output/*

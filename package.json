@@ -1,6 +1,6 @@
 {
   "name": "xdne-js",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "An npm module for retrieving generated images of persons, places, or things that do not exist",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

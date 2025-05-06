@@ -32,6 +32,10 @@ jobs:
         - name: Install dependencies
           if: steps.cpv.outputs.is-new-version == 'true'
           run: npm ci
+        
+        - name: Build Package
+          if: steps.cpv.outputs.is-new-version == 'true'
+          run: npm run build
 
         - name: NPM Repo Publish
           if: steps.cpv.outputs.is-new-version == 'true'

@@ -8,7 +8,7 @@
     "/dist"
   ],
   "scripts": {
-    "compile": "tsc",
+    "build": "tsc",
     "test": "mocha",
     "prepare": "husky"
   },

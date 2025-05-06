@@ -4,8 +4,11 @@
   "description": "An npm module for retrieving generated images of persons, places, or things that do not exist",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
-    "compile": "tsc --declaration",
+    "compile": "tsc",
     "test": "mocha",
     "prepare": "husky"
   },
@@ -22,17 +25,19 @@
   "license": "LGPL-3.0-or-later",
   "type": "module",
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@tsconfig/strictest": "^2.0.5",
-    "@types/chai": "^5.2.1",
+    "@types/chai": "^5.2.2",
     "@types/imagemin": "^9.0.1",
     "@types/imagemin-mozjpeg": "^8.0.4",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^22.15.3",
+    "@types/node": "^22.15.9",
     "chai": "^5.2.0",
     "file-type": "^20.5.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.1",
     "mocha": "^11.2.2",
+    "nyc": "^17.1.0",
     "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"

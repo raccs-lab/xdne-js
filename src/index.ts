@@ -1,4 +1,4 @@
-const PhotoTypes = Object.freeze({
+export const PhotoTypes = Object.freeze({
   Random: -1,
   Person: 0,
   // Cat: 1,
@@ -7,7 +7,7 @@ const PhotoTypes = Object.freeze({
   Room: 1,
 });
 
-async function getImage(
+export async function getImage(
   type: number = PhotoTypes.Random
 ): Promise<Buffer> {
   //give a list of usable image urls
@@ -43,5 +43,3 @@ async function getImage(
     throw error;
   }
 }
-
-export { PhotoTypes, getImage }

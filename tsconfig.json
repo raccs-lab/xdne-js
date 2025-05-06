@@ -1,7 +1,12 @@
 {
   "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist",
+    "module": "ESNext",
+    "target": "ES2020",
+    "rootDir": "src",
+    "outDir": "dist",
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
   },
   "include": [
     "src/**/*"

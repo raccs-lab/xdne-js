@@ -1,4 +1,4 @@
-import { getImage, PhotoTypes } from '../src/index.ts';
+import { getImage, PhotoTypes } from '../dist/index.js';
 import { expect } from 'chai';
 import { fileTypeFromBuffer } from 'file-type';
 import 'mocha';
@@ -44,7 +44,7 @@ describe('Get image function Person type', () => {
     const type = await fileTypeFromBuffer(result);
     expect(type).to.have.property("mime").equals('image/jpeg');
     // expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output/person.jpeg', result);
+    // writeFileSync('test/output/person.jpeg', result);
   });
 });
 
@@ -55,7 +55,7 @@ describe('Get image function Random type', () => {
     const type = await fileTypeFromBuffer(result);
     expect(type).to.have.property("mime").equals('image/jpeg');
     // expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output/random.jpeg', result);
+    // writeFileSync('test/output/random.jpeg', result);
   });
 });
 
@@ -66,6 +66,6 @@ describe('Get image function Room type', () => {
     const type = await fileTypeFromBuffer(result);
     expect(type).to.have.property("mime").equals('image/jpeg');
     // expect(type.mime).to.equal('image/jpeg');
-    writeFileSync('test/output/room.jpeg', result);
+    // writeFileSync('test/output/room.jpeg', result);
   });
 });
